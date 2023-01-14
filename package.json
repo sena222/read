@@ -18,15 +18,7 @@
     "lib",
     "README.md"
   ],
-  "homepage": "http://sani222.github.io/read",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/altmshfkgudtjr/react-epub-viewer"
-  },
-  "bugs": {
-    "url": "https://github.com/altmshfkgudtjr/react-epub-viewer/issues",
-    "email": "altmshfkgudtjr@naver.com"
-  },
+  "homepage": "http://sena222.github.io/read",
   "scripts": {
     "start": "react-scripts start",
     "prebuild": "react-scripts test --watchAll=false --passWithNoTests",
