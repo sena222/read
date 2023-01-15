@@ -62,6 +62,10 @@ const ReactViewer = (
     lineHeight: 1.4,
     marginHorizontal: 0,
     marginVertical: 0,
+    fontWeight: 100,
+    fontColor: 'inherit',
+    paragraphMargin: 0,
+    wordSpace: 0,
   });
 
   const [bookOption, setBookOption] = useState<BookOption>({
@@ -270,6 +274,10 @@ const ReactViewer = (
       p: {
         'font-size': `${bookStyle.fontSize}px !important`,
         'line-height': `${bookStyle.lineHeight} !important`,
+        'font-weight': `${bookStyle.fontWeight} !important`,
+        'word-spacing': `${bookStyle.wordSpace} !important`,
+        'margin-bottom': `${bookStyle.paragraphMargin} !important`,
+        'font-color': `${bookStyle.fontColor} !important`,
         'font-family': `Fira code !important`
       },
     };
@@ -306,6 +314,10 @@ const ReactViewer = (
     bookStyle.fontFamily,
     bookStyle.fontSize,
     bookStyle.lineHeight,
+    bookStyle.fontColor,
+    bookStyle.wordSpace,
+    bookStyle.paragraphMargin,
+    bookStyle.fontWeight,
     viewerStyleURL,
     bookOption,
     onResize,

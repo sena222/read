@@ -25,6 +25,10 @@ const Option = ({
   const [fontFamily, setFontFamily] = useState<BookFontFamily>(bookStyle.fontFamily);
   const [fontSize, setFontSize] = useState<number>(bookStyle.fontSize);
   const [lineHeight, setLineHeight] = useState<number>(bookStyle.lineHeight);
+  const [fontWeight, setFontWeight] = useState<number>(100);
+  const [paragraphMargin, setParagraphMargin] = useState<number>(0);
+  const [wordSpace, setWordSpace] = useState<number>(0);
+  const [fontColor, setFontColor] = useState('inherit')
   const [marginHorizontal, setMarginHorizontal] = useState<number>(bookStyle.marginHorizontal);
   const [marginVertical, setMarginVertical] = useState<number>(bookStyle.marginVertical);
   const [isScrollHorizontal, setIsScrollHorizontal] = useState<boolean>(true);
@@ -53,6 +57,15 @@ const Option = ({
       case "MarginVertical":
         setMarginVertical(e.target.value);
         break;
+        case "WordSpace":
+          setWordSpace(e.target.value);
+          break;
+        case "FontWeight":
+          setFontWeight(e.target.value);
+          break;
+        case "ParagraphMargin":
+          setParagraphMargin(e.target.value);
+          break;
       default:
         break;
     }
@@ -111,7 +124,11 @@ const Option = ({
         fontSize,
         lineHeight,
         marginHorizontal,
-        marginVertical
+        marginVertical,
+        fontWeight,
+        wordSpace,
+        paragraphMargin,
+        fontColor
       });
     }, 250);
 
@@ -184,6 +201,32 @@ const Option = ({
                       defaultValue={fontSize}
                       step={1}
                       onChange={(e) => onChangeSlider("FontSize", e)} />
+                      <OptionSlider active={true}
+                      title="word space"
+                      minValue={-10}
+                      maxValue={10}
+                      defaultValue={0}
+                      step={1}
+                      onChange={(e) => onChangeSlider("WordSpace", e)} />
+                      <OptionSlider active={true}
+                      title="font weight"
+                      minValue={100}
+                      maxValue={800}
+                      defaultValue={100}
+                      step={100}
+                      onChange={(e) => onChangeSlider("FontWeight", e)} />
+                      <OptionSlider active={true}
+                      title="paragraph margin"
+                      minValue={0}
+                      maxValue={40}
+                      defaultValue={fontSize}
+                      step={1}
+                      onChange={(e) => onChangeSlider("ParagraphMargin", e)} />
+                      <input 
+                      title="font color"
+                      type="text"
+                      defaultValue={'inherit'}
+                      onChange={(e) => setFontColor(e.target?.value)} />
         <OptionSlider active={true}
                       title="Line height"
                       minValue={1}
@@ -198,6 +241,8 @@ const Option = ({
                       defaultValue={marginHorizontal}
                       step={1}
                       onChange={(e) => onChangeSlider("MarginHorizontal", e)} />
+
+                       
         <OptionSlider active={bookFlow === "paginated"}
                       title="Vertical margin"
                       minValue={0}
@@ -224,7 +269,10 @@ interface Props {
 type SliderType = "FontSize" 
   | "LineHeight" 
   | "MarginHorizontal" 
-  | "MarginVertical";
+  | "MarginVertical"
+  | "ParagraphMargin"
+  | "WordSpace"
+  | "FontWeight"
 
 type ViewType = {
   active: boolean,

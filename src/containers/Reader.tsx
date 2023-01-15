@@ -46,7 +46,11 @@ const Reader = ({ url, loadingView }: Props) => {
     fontSize: 18,
     lineHeight: 1.4,
     marginHorizontal: 15,
-    marginVertical: 5
+    marginVertical: 5,
+	fontWeight: 100,
+        wordSpace: 0,
+        paragraphMargin: 0,
+        fontColor: 'inherit'
   });
 
   const [bookOption, setBookOption] = useState<BookOption>({

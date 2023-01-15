@@ -34,6 +34,10 @@ export type BookStyle = {
 	lineHeight: number;
 	marginHorizontal: number;
 	marginVertical: number;
+	fontWeight: number,
+        wordSpace: number,
+        paragraphMargin: number,
+        fontColor: string
 }
 
 /** 
