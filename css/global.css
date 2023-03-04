@@ -29,7 +29,8 @@ a {
 	font-weight: 400;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	font-size: 1rem;
-	color: #333;
+	background: rgb(36 40 48) !important;
+    color: rgb(223 207 209) !important;
 }
 
 #root {
